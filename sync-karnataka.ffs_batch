@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="BATCH" XmlFormat="23">
+    <Notes/>
+    <Compare>
+        <Variant>TimeAndSize</Variant>
+        <Symlinks>Exclude</Symlinks>
+        <IgnoreTimeShift/>
+    </Compare>
+    <Synchronize>
+        <Variant>2</Variant> <!-- Mirror mode -->
+        <DetectMovedFiles>true</DetectMovedFiles>
+        <Differences LeftOnly="right" LeftNewer="right" RightNewer="none" RightOnly="none"/>
+        <DeletionPolicy>Permanent</DeletionPolicy>
+        <VersioningFolder Style="Replace"/>
+    </Synchronize>
+    <Filter>
+        <Include>
+            <Item>*.csv</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLE?\</Item>
+            <Item>*\thumbs.db</Item>
+            <Item>*\</Item>
+        </Exclude>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+        <TimeSpan Type="x-days">1</TimeSpan>
+    </Filter>
+    <FolderPairs>
+        <Pair>
+            <Left>C:\karnataka</Left>
+            <Right>ftp://ftp_mw@103.171.96.233/ftp_mw/karnataka|pass64=MTIzNDU=|timeout=60</Right>
+        </Pair>
+    </FolderPairs>
+    <Errors Ignore="true" Retry="0" Delay="5"/>
+    <PostSyncCommand Condition="Completion"/>
+    <LogFolder/>
+    <EmailNotification Condition="Always"/>
+    <GridViewType>Action</GridViewType>
+    <Batch>
+        <ProgressDialog Minimized="true" AutoClose="true"/>
+        <ErrorDialog>Show</ErrorDialog>
+        <PostSyncAction>None</PostSyncAction>
+    </Batch>
+</FreeFileSync>
